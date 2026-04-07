@@ -1,15 +1,17 @@
-/*
-    Изменить элементу цвет и ширину можно вот так:
+const progressBar = document.querySelector('.progress-bar');
 
-    const element = document.querySelector('.myElement');
-    element.style.color = 'red';
-    element.style.width = '300px';
-*/
+let progress = 0;
+const duration = 3000;
+const fps = 144;
+const totalFrames = (duration / 1000) * fps;
+const increment = 100 / totalFrames;
 
-// Задание 2: Модальное окно
-const openBtn = document.querySelector('#openModal');
-const closeBtn = document.querySelector('#closeModal');
-const overlay = document.querySelector('#modalOverlay');
-
-openBtn.addEventListener('click', () => overlay.classList.remove('hidden'));
-closeBtn.addEventListener('click', () => overlay.classList.add('hidden'));
+function animate() {
+    progress += increment;
+    if (progress > 100) progress = 100;
+    progressBar.style.width = progress + '%';
+    if (progress < 100) {
+        requestAnimationFrame(animate);
+    }
+}
+animate();

@@ -6,7 +6,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--Верстать тут-->
+    <!-- Задание 1: Логотипы в квадрате 100x100 -->
+    <section class="logos">
+        <div class="logo-box">
+            <img src="designs/logo1.png" alt="Mickey Mouse logo">
+        </div>
+        <div class="logo-box">
+            <img src="designs/logo2.png" alt="BBC logo">
+        </div>
+    </section>
+
+    <!-- Задание 2: Модальное окно -->
+    <button id="openModal">Открыть модальное окно</button>
+
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal">
+            <button class="modal-close" id="closeModal">&#x2715;</button>
+            <h2>Модальное окно</h2>
+            <p>Это содержимое модального окна. Высота подстраивается под контент.</p>
+            <p>Можно добавить сюда любой текст или другие элементы страницы.</p>
+        </div>
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>

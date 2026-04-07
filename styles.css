@@ -3,6 +3,27 @@ body {
     background: #f0f0f0;
 }
 
+.logos {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+}
+
+.logo-box {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+}
+
+.logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .modal {
     position: fixed;
     inset: 0;
@@ -12,12 +33,32 @@ body {
     justify-content: center;
 }
 
+.modal.hidden {
+    display: none;
+}
+
 .modal-content {
+    position: relative;
     background: #fff;
     padding: 40px;
     border-radius: 12px;
     width: 400px;
     text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    opacity: 0.6;
 }
 
 .progress-container {
@@ -45,7 +86,6 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-
     color: white;
     mix-blend-mode: difference;
 }

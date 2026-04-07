@@ -1,4 +1,7 @@
 const progressBar = document.querySelector('.progress-bar');
+const openBtn = document.querySelector('#openModal');
+const closeBtn = document.querySelector('#closeModal');
+const modal = document.querySelector('#modal');
 
 let progress = 0;
 const duration = 3000;
@@ -14,4 +17,12 @@ function animate() {
         requestAnimationFrame(animate);
     }
 }
-animate();
+
+openBtn.addEventListener('click', () => {
+    progress = 0;
+    progressBar.style.width = '0%';
+    modal.classList.remove('hidden');
+    animate();
+});
+
+closeBtn.addEventListener('click', () => modal.classList.add('hidden'));

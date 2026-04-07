@@ -13,15 +13,67 @@ body {
     width: 100px;
     height: 100px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     border: 1px solid #ccc;
+    background: #fff;
 }
 
-.logo-box img {
-    max-width: 100%;
-    max-height: 100%;
+.logo-mickey .mickey-head {
+    width: 62px;
+    height: 62px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2px;
+    left: 19px;
+}
+
+.logo-mickey .mickey-ear-left {
+    width: 30px;
+    height: 30px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 4px;
+}
+
+.logo-mickey .mickey-ear-right {
+    width: 30px;
+    height: 30px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: 4px;
+}
+
+.logo-microsoft {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+    padding: 22px;
+}
+
+.ms-square {
+    border-radius: 2px;
+}
+
+.ms-red {
+    background: #f25022;
+}
+
+.ms-green {
+    background: #7fba00;
+}
+
+.ms-blue {
+    background: #00a4ef;
+}
+
+.ms-yellow {
+    background: #ffb900;
 }
 
 .modal {
@@ -88,4 +140,54 @@ body {
     font-weight: bold;
     color: white;
     mix-blend-mode: difference;
+}
+
+.accordion {
+    text-align: left;
+    margin-top: 24px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.accordion-toggle {
+    display: none;
+}
+
+.accordion-item + .accordion-item {
+    border-top: 1px solid #ccc;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #e8e8e8;
+    cursor: pointer;
+    user-select: none;
+}
+
+.accordion-header::before {
+    content: '▶';
+    font-size: 11px;
+    display: inline-block;
+}
+
+.accordion-toggle:checked ~ .accordion-header::before {
+    content: '▼';
+}
+
+.accordion-body {
+    display: none;
+    padding: 12px 16px;
+    border-top: 1px solid #ccc;
+}
+
+.accordion-body p {
+    margin: 0;
+}
+
+.accordion-toggle:checked ~ .accordion-body {
+    display: block;
 }
